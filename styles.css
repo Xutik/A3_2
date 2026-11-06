@@ -142,10 +142,10 @@ button {
 
 .site-nav {
     display: flex;
-    align-items: left;
+    align-items: center;
     gap: var(--spacing-sm);
     padding: var(--spacing-sm) var(--container-padding);
-    justify-content: left;
+    justify-content: space-between;
 }
 
 .site-logo img {
@@ -161,9 +161,12 @@ button {
     width: 50px;
 }
 
-.nav-menu,
-.menu-nav {
+.nav-menu {
     display: none;
+}
+
+.menu-nav {
+    display: block;
 }
 
 .hero-banner {
@@ -445,6 +448,13 @@ button {
 }
 
 @media (min-width: 64rem) {
+
+.menu-toggle,
+.menu-close,
+.menu-panel {
+    display: none;
+}
+
 .menu-nav {
     display: block;
     background-color: var(--color-dark);
@@ -453,6 +463,7 @@ button {
 
 .nav-menu {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 8rem;
     justify-content: center;
@@ -461,7 +472,6 @@ button {
 }
 
 .nav-menu a {
-    color: var(--color-white);
     font-size: 0.875rem;
 }
 
