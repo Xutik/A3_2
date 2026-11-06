@@ -15,36 +15,28 @@
       </a>
         <p class="site-title">Hacker Escape Rooms</p>
 
-      <button
-        class="menu-toggle"
-        type="button">
-        <span class="menu-toggle_bar"></span>
-        <span class="menu-toggle_bar"></span>
-        <span class="menu-toggle_bar"></span>
-      </button>
+      <input class="menu-checkbox" type="checkbox" id="menu-checkbox">
+
+        <label class="menu-toggle" for="menu-checkbox" aria-label="Open menu">
+          <span class="menu-toggle_bar"></span>
+          <span class="menu-toggle_bar"></span>
+          <span class="menu-toggle_bar"></span>
+        </label>
+
+        <div class="menu-panel">
+          <label class="menu-close" for="menu-checkbox" aria-label="Close menu">
+            <span class="menu-close_line"></span>
+            <span class="menu-close_line"></span>
+          </label>
+
+          <ul id="nav-menu" class="nav-menu">
+            <li><a href="#play">Play online</a></li>
+            <li><a href="#play">Play on-site</a></li>
+            <li><a href="#story">The story</a></li>
+            <li><a href="#contact">Contact us</a></li>
+          </ul>
+        </div>
     </nav>
-
-    <details class="menu-nav">
-      <summary class="menu-toggle">
-        <span class="menu-toggle_bar"></span>
-        <span class="menu-toggle_bar"></span>
-        <span class="menu-toggle_bar"></span>
-      </summary>
-
-      <div class="menu-panel">
-        <summary class="menu-close">
-          <span class="menu-close_line"></span>
-          <span class="menu-close_line"></span>
-        </summary>
-
-        <ul id="nav-menu" class="nav-menu">
-          <li><a href="#play">Play online</a></li>
-          <li><a href="#play">Play on-site</a></li>
-          <li><a href="#story">The story</a></li>
-          <li><a href="#contact">Contact us</a></li>
-        </ul>
-      </div>
-    </details>
 
     <div class="hero-banner" id="home">
       <img

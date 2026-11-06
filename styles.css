@@ -145,30 +145,117 @@ button {
     align-items: center;
     gap: var(--spacing-sm);
     padding: var(--spacing-sm) var(--container-padding);
-    justify-content: space-between;
+
+    background-color: var(--color-dark);
+}
+
+.site-logo {
+  flex: 0 0 auto;
 }
 
 .site-logo img {
-    width: 7.5rem;
-    height: auto;
+  width: 7.5rem;
+  height: auto;
+}
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.menu-toggle_bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-white);
+}
+.menu-nav {
+  position: static;
+}
+.menu-panel {
+  display: none;
 }
 
 .site-title {
-    color: var(--color-white);
-    font-size: 0.875rem;
-    line-height: 1.25;
-    text-align: left;
-    width: 50px;
+  flex: 0 1 auto;
+  max-width: 4rem;
+  color: var(--color-white);
+  font-size: 0.875rem;
+  line-height: 1.25;
+  text-align: left;
+  overflow-wrap: break-word;
 }
 
+.menu-nav[open] .menu-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+.menu-checkbox:checked ~ .menu-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
 .nav-menu {
-    display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-align: center;
 }
 
-.menu-nav {
-    display: block;
+.nav-menu a {
+  font-size: 1.125rem;
+  color: var(--color-white);
 }
 
+.nav-menu a:hover,
+.nav-menu a:focus-visible {
+  color: var(--color-light-blue);
+}
+.menu-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+}
+
+.menu-close_line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.5rem;
+  height: 2px;
+  background-color: var(--color-white);
+}
+
+.menu-close_line:first-child {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.menu-close_line:last-child {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
 .hero-banner {
     position: relative;
     min-height: 18rem;
@@ -223,12 +310,12 @@ button {
 }
 
 .switcher-online {
-  background-color: transparent;
-  color: var(--color-blue);
-  font-weight: 700;
-  font-size: 0.875rem;
-  text-decoration: underline;
-  padding: 0.25rem;
+    background-color: transparent;
+    color: var(--color-blue);
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-decoration: underline;
+    padding: 0.25rem;
 }
 
 .switcher .button-secondary {
@@ -236,13 +323,13 @@ button {
 }
 
 .switcher-hero {
-  margin-top: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
 }
 
 .switcher-bottom {
-  margin-top: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
 }
 
 .review_author {
@@ -447,20 +534,48 @@ button {
     height: 18rem;
 }
 
+.menu-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
 @media (min-width: 64rem) {
 
+.menu-checkbox,
 .menu-toggle,
-.menu-close,
-.menu-panel {
+.menu-close {
     display: none;
 }
-
-.menu-nav {
-    display: block;
-    background-color: var(--color-dark);
-    padding: var(--spacing-md) var(--container-padding);
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--container-padding);
+  background-color: var(--color-dark);
 }
+.menu-panel {
+  display: block;
 
+  order: 2;
+  flex: 0 0 100%;
+  width: 100%;
+  background-color: var(--color-dark);
+
+}
+.site-title {
+    max-width: none;
+    font-size: 1rem;
+    line-height: 1;
+    align-self: flex-end;
+    padding-bottom: 0.25rem;
+}
 .nav-menu {
     display: flex;
     flex-direction: row;
@@ -473,6 +588,7 @@ button {
 
 .nav-menu a {
     font-size: 0.875rem;
+    color: var(--color-white);
 }
 
 .nav-menu a:hover,
