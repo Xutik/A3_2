@@ -528,6 +528,7 @@ button {
 .mobile-menu-open-btn,
 .mobile-menu-overlay {
     display: none !important;
+}
 
 .nav-menu {
     display: flex;
