@@ -134,7 +134,6 @@ button {
   display: none;
 }
 
-
 .site-header {
     background-color: var(--color-dark);
     color: var(--color-white);
@@ -142,10 +141,10 @@ button {
 
 .site-nav {
     display: flex;
-    align-items: left;
     gap: var(--spacing-sm);
     padding: var(--spacing-sm) var(--container-padding);
-    justify-content: left;
+    align-items: center;
+    gap: var(--spacing-sm);
 }
 
 .site-logo img {
@@ -164,6 +163,81 @@ button {
 .nav-menu,
 .menu-nav {
     display: none;
+}
+
+.mobile-menu-open-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xs);
+    margin-left: auto;
+    color: var(--color-white);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.mobile-menu-open-btn svg {
+    display: block;
+}
+
+.mobile-menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xl);
+    text-align: center;
+    padding: var(--spacing-lg);
+}
+
+.mobile-menu-link {
+    color: var(--color-white);
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: transparent;
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link:focus-visible {
+    color: var(--color-light-blue);
+    background: transparent;
+}
+
+.mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-dark);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.mobile-menu-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.mobile-menu-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: var(--container-padding);
+    padding: var(--spacing-xs);
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+.mobile-menu-close-btn svg {
+    display: block;
 }
 
 .hero-banner {
@@ -220,26 +294,26 @@ button {
 }
 
 .switcher-online {
-  background-color: transparent;
-  color: var(--color-blue);
-  font-weight: 700;
-  font-size: 0.875rem;
-  text-decoration: underline;
-  padding: 0.25rem;
+    background-color: transparent;
+    color: var(--color-blue);
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-decoration: underline;
+    padding: 0.25rem;
 }
 
 .switcher .button-secondary {
-  order: -1;
+    order: -1;
 }
 
 .switcher-hero {
-  margin-top: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
 }
 
 .switcher-bottom {
-  margin-top: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
 }
 
 .review_author {
@@ -270,8 +344,8 @@ button {
 }
 
 .popular-challenges {
-  min-width: 0;
-  width: 100%;
+    min-width: 0;
+    width: 100%;
 }
 
 .popular-challenges h2 {
@@ -280,13 +354,13 @@ button {
 }
 
 .challenge-slider {
-  display: flex;
-  gap: var(--spacing-md);
-  width: 100%;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: var(--spacing-sm);
-  -webkit-overflow-scrolling: touch;
+    display: flex;
+    gap: var(--spacing-md);
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: var(--spacing-sm);
+    -webkit-overflow-scrolling: touch;
 }
 .rating {
     display: flex;
@@ -300,13 +374,13 @@ button {
 }
 
 .challenge-slider {
-  display: flex;
-  gap: var(--spacing-md);
-  width: 100%;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: var(--spacing-sm);
-  -webkit-overflow-scrolling: touch;
+    display: flex;
+    gap: var(--spacing-md);
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: var(--spacing-sm);
+    -webkit-overflow-scrolling: touch;
 }
 
 .challenge-card {
@@ -381,34 +455,34 @@ button {
 }
 
 .info-card {
-  display: grid;
-  grid-template-columns: 1fr;
-  overflow: hidden;
-  background-color: var(--color-white);
-  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.08);
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    background-color: var(--color-white);
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.08);
 }
 
 .info-card_image {
-  width: 100%;
-  height: 14rem;
-  object-fit: cover;
+    width: 100%;
+    height: 14rem;
+    object-fit: cover;
 }
 
 .info-card_content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--spacing-sm);
-  padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
 }
 
 .info-card_content h3 {
-  font-size: 1.125rem;
-  line-height: 1.35;
+    font-size: 1.125rem;
+    line-height: 1.35;
 }
 
 .info-card_content p {
-  color: var(--color-muted-text);
+    color: var(--color-muted-text);
 }
 
 .site-footer {
@@ -450,6 +524,10 @@ button {
     background-color: var(--color-dark);
     padding: var(--spacing-md) var(--container-padding);
 }
+
+.mobile-menu-open-btn,
+.mobile-menu-overlay {
+    display: none !important;
 
 .nav-menu {
     display: flex;
@@ -510,13 +588,13 @@ button {
 }
 
 .info-card-image-left .info-card_image {
-  grid-column: 1;
-  grid-row: 1;
+    grid-column: 1;
+    grid-row: 1;
 }
 
 .info-card-image-left .info-card_content {
-  grid-column: 2;
-  grid-row: 1;
+    grid-column: 2;
+    grid-row: 1;
 }
 
 .info-card-image-right .info-card_content {
